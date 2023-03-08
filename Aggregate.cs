@@ -26,5 +26,17 @@ public class Program
 
 		double averageOfAllNumbers = Numbers.Average();
 		Console.WriteLine(averageOfAllNumbers);
+		//using Min() with user defined type
+		List<Person> p = new List<Person>() 
+		{ 
+	          new Person(){ Id = 2, Name="Bill"},
+	          new Person(){ Id = 3, Name="Steve"},
+		  new Person(){ Id = 4, Name="Ram"},
+		  new Person(){ Id = 5, Name="Abdul"},
+		  new Person(){ Id = 6, Name="Abdul"}
+	        };
+		int resultPerson = p.Min(x=> x.Id);
+		Console.WriteLine(resultPerson);
+		
 	}
 }
