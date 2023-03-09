@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 namespace Demo
 {
-    public class Program
+    public class AggregateFunction
     {
         public static void Main()
         {
