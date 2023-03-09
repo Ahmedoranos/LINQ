@@ -17,6 +17,10 @@ namespace Demo
 			int aggregateResult = numbers.Aggregate((a,b) => a*b);
 			
 			Console.WriteLine(aggregateResult);
+                        /*seed parameter*/		
+		        int resultSeed = numbers.Aggregate(10, (a, b) => a * b);
+			Console.WriteLine(resultSeed);
+		
         }
     }
 }
