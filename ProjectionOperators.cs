@@ -28,13 +28,19 @@ public class ProjectionOperators
 		{
 			Console.WriteLine(x.name + " , " + x.monthSalary);
 		}
-		/*repeat using SQL like syntax*/
-		var resultSQLLike = Employee.GetAllEmployees().Where(x=> x.AnnualSalary > 50000).Select( x => new{ name = x.FirstName + " " + x.LastName , monthSalary = x.AnnualSalary/12});
+		/*repeat using Where*/
+		var resultusingWhere = Employee.GetAllEmployees().Where(x=> x.AnnualSalary > 50000).Select( x => new{ name = x.FirstName + " " + x.LastName , monthSalary = x.AnnualSalary/12});
 		Console.WriteLine("---------------------------------");
-		foreach(var x in resultSQLLike)
+		foreach(var x in resultusingWhere)
 		{
 			Console.WriteLine(x.name + " , " + x.monthSalary);
 		}
+		/*repeat using SQL like syntax*/
+		var resultSQLLike2 = 
+			from employ in Employee.GetAllEmployees()
+			where employ.AnnualSalary > 50000
+			select employ;
+		
 		
 	}
 }
